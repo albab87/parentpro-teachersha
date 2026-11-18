@@ -1,0 +1,58 @@
+name: Bina APK
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: android-actions/setup-android@v3
+
+      - name: Sediakan projek Capacitor
+        run: |
+          npm init -y
+          npm install @capacitor/core@6 @capacitor/cli@6 @capacitor/android@6
+          npx cap init "ParentPro by Teacher Sha" com.teachersha.parentpro --web-dir www
+          npx cap add android
+          npx cap sync android
+
+      - name: Pasang ikon app
+        run: |
+          if [ -f icon.png ]; then
+            RES=android/app/src/main/res
+            rm -rf $RES/mipmap-anydpi-v26
+            for d in mdpi:48 hdpi:72 xhdpi:96 xxhdpi:144 xxxhdpi:192; do
+              n=${d%%:*}; s=${d##*:}
+              convert icon.png -resize ${s}x${s} $RES/mipmap-$n/ic_launcher.png
+              cp $RES/mipmap-$n/ic_launcher.png $RES/mipmap-$n/ic_launcher_round.png
+              cp $RES/mipmap-$n/ic_launcher.png $RES/mipmap-$n/ic_launcher_foreground.png
+            done
+          fi
+
+      - name: Bina APK
+        working-directory: android
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: Namakan semula APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk ParentPro.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ParentPro-APK
+          path: ParentPro.apk
