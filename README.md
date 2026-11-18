@@ -18,7 +18,10 @@ icon.png                        ← ikon app (512x512)
 .github/workflows/build-apk.yml ← arahan GitHub untuk bina APK
 ```
 
-## Cara dapatkan APK
+## Muat turun APK terkini
+https://github.com/albab87/parentpro-teachersha/releases/latest/download/ParentPro.apk
+
+## Cara bina APK sendiri
 1. Buat repo baharu di github.com (contoh: `ibubapa-tenang`).
 2. **Add file → Upload files**, seret SEMUA fail & folder ini (termasuk folder `.github`) → **Commit**.
 3. Buka tab **Actions** → tunggu "Bina APK" siap (~5 minit, tanda ✅ hijau).
