@@ -28,7 +28,6 @@
   .hero{padding:0;overflow:hidden}
   .hero img{width:100%;display:block}
   .hero .in{padding:14px 16px}
-  .tag{display:inline-block;background:var(--green);color:#fff;font-style:italic;border-radius:20px;padding:3px 12px;font-size:13px}
   h2{font-size:20px;margin:6px 0 8px;color:var(--brand)}
   h3{font-size:16px;margin:12px 0 6px;color:var(--teal)}
   .muted{color:var(--muted);font-size:14px}
@@ -38,24 +37,26 @@
   .btn.alt{background:var(--teal)}
   .btn.ghost{background:var(--soft);color:var(--ink)}
   .btn.done{background:var(--green)}
+  .btn.sm{display:inline-block;width:auto;padding:8px 14px;font-size:14px;margin:0}
   .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
   .topic{background:#fff;border-radius:16px;padding:12px 6px;text-align:center;font-size:12.5px;font-weight:600;border:0;color:var(--ink);box-shadow:0 2px 6px rgba(120,90,40,.07)}
   .topic .ic{width:54px;height:54px;border-radius:50%;margin:0 auto 6px;display:flex;align-items:center;justify-content:center;font-size:28px}
   .days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
-  .d{aspect-ratio:1;border-radius:14px;border:0;background:#fff;font-size:17px;font-weight:700;color:var(--ink);box-shadow:0 2px 6px rgba(120,90,40,.07);position:relative}
+  .d{aspect-ratio:1;border-radius:14px;border:0;background:#fff;font-size:17px;font-weight:700;color:var(--ink);box-shadow:0 2px 6px rgba(120,90,40,.07)}
   .d.ok{background:var(--green);color:#fff}
   .d.today{outline:3px solid var(--brand)}
   .row{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f0e6d4}
   .row:last-child{border:0}
-  .row .ic{width:42px;height:42px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:22px}
+  .row .ic{width:42px;height:42px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:22px;background:var(--soft)}
   .row .t{flex:1}
   .row b{display:block;font-size:15px}
-  .chk{font-size:20px}
+  .chk{font-size:22px}
   .box{background:var(--soft);border-radius:14px;padding:12px 14px;margin:10px 0}
   .box.task{background:#E5F2E6}
   .box.ref{background:#E4EEF3}
   textarea,input{width:100%;border:1px solid #e0d3bb;border-radius:12px;padding:12px;font-size:16px;font-family:inherit;background:#fffdf8}
-  textarea{min-height:110px;resize:vertical}
+  textarea{min-height:90px;resize:vertical}
+  input[type=number]{width:90px;text-align:center}
   .stats{display:flex;gap:10px}
   .stat{flex:1;background:var(--soft);border-radius:14px;padding:10px;text-align:center}
   .stat b{display:block;font-size:24px;color:var(--brand)}
@@ -65,11 +66,37 @@
   .breath.big{transform:scale(1)}
   .quote{font-style:italic;color:var(--teal);border-left:4px solid var(--brand);padding-left:12px}
   .footer{text-align:center;font-size:12px;color:var(--muted);margin-top:20px}
-  .moods{display:flex;justify-content:space-between;margin-top:8px}
-  .moods button{font-size:28px;background:#fff;border:2px solid transparent;border-radius:14px;padding:6px 8px}
-  .moods button.on{border-color:var(--brand);background:var(--soft)}
   .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:20px;font-size:14px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:9;white-space:nowrap}
   .toast.on{opacity:.92}
+  .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px}
+  .chip{border:0;border-radius:20px;padding:8px 16px;background:#fff;font-size:15px;font-weight:600;white-space:nowrap;box-shadow:0 2px 6px rgba(120,90,40,.08);color:var(--ink)}
+  .chip.on{background:var(--brand);color:#fff}
+  .emo{border:3px solid transparent;border-radius:18px;padding:12px 2px;text-align:center;font-size:13px;font-weight:600;color:var(--ink)}
+  .emo .e{font-size:42px;line-height:1.1;display:block}
+  .emo.on{border-color:var(--brand);transform:scale(1.04)}
+  .week{display:flex;justify-content:space-between;text-align:center;font-size:12px;color:var(--muted)}
+  .week div{flex:1}
+  .week b{display:block;font-size:24px;min-height:34px}
+  .timer{font-size:44px;font-weight:800;color:var(--teal);text-align:center;letter-spacing:2px}
+  .qcard{border-left:5px solid var(--brand);background:#fffaf1;border-radius:14px;padding:12px;margin:12px 0}
+  .qcard .q{font-weight:700;margin:4px 0 8px;font-size:16.5px}
+  .qcard .tools{display:flex;justify-content:space-between;align-items:center}
+  .link{background:none;border:0;color:var(--teal);font-weight:600;font-size:14px;padding:4px 0}
+  .mission{display:flex;align-items:center;gap:12px;padding:12px;border-radius:14px;background:var(--soft);margin:8px 0;border:0;width:100%;text-align:left;font-size:15px;color:var(--ink)}
+  .mission.ok{background:#DDF0DF}
+  .mission .ic{font-size:24px}
+  .mission .t{flex:1}
+  .rank{display:flex;align-items:center;gap:10px;padding:8px 0}
+  .rank .pos{font-size:22px;width:30px;text-align:center}
+  .rank .nm{flex:1;font-weight:600}
+  .rank .sc{font-weight:800;color:var(--brand);font-size:18px}
+  .pill{display:inline-block;background:var(--soft);border-radius:12px;padding:2px 10px;font-size:12.5px;margin:2px 4px 2px 0}
+  .kidrow{display:flex;gap:8px;align-items:center;margin:6px 0}
+  .kidrow input{flex:1}
+  .kidrow input.age{flex:none;width:80px}
+  .x{border:0;background:#f6d5d5;border-radius:10px;padding:10px 12px;font-size:16px}
+  .premium{background:linear-gradient(135deg,#C2571A,#E58A3A);color:#fff}
+  .premium h2,.premium .muted{color:#fff}
 </style>
 </head>
 <body>
@@ -77,204 +104,101 @@
 <main id="app"></main>
 <nav>
   <button data-tab="home" class="on"><span>🏠</span>Utama</button>
-  <button data-tab="program"><span>📅</span>30 Hari</button>
-  <button data-tab="topics"><span>🧩</span>Topik</button>
-  <button data-tab="calm"><span>🌿</span>Tenang</button>
-  <button data-tab="journal"><span>📔</span>Jurnal</button>
+  <button data-tab="emo"><span>💗</span>Emosi</button>
+  <button data-tab="qa"><span>💬</span>Soal Jawab</button>
+  <button data-tab="games"><span>🎲</span>Permainan</button>
+  <button data-tab="more"><span>☰</span>Lagi</button>
 </nav>
 <div class="toast" id="toast"></div>
 
+<script src="program.js"></script>
+<script src="kids.js"></script>
 <script>
-/* ================= DATA ================= */
-const TOPICS = [
- {id:1,name:"Kesedaran Diri",ic:"🧠",c:"#FBD9B8",desc:"Mengenali corak, pencetus dan warisan diri sebagai ibu bapa."},
- {id:2,name:"Pengawalan Emosi",ic:"⚖️",c:"#FCE8A6",desc:"Kekal tenang ketika situasi mencabar dan membaiki hubungan selepas marah."},
- {id:3,name:"Komunikasi Sedar",ic:"💬",c:"#CDEAD0",desc:"Mendengar dengan hati dan bercakap supaya anak mahu mendengar."},
- {id:4,name:"Memahami Tingkah Laku Anak",ic:"🔍",c:"#F7C9CF",desc:"Melihat keperluan di sebalik tingkah laku anak."},
- {id:5,name:"Disiplin Positif",ic:"📋",c:"#CFE6F2",desc:"Mendidik dengan tegas dan penuh kasih, tanpa menakutkan."},
- {id:6,name:"Ikatan Ibu Bapa & Anak",ic:"❤️",c:"#F7C9CF",desc:"Membina hubungan erat melalui masa dan perhatian berkualiti."},
- {id:7,name:"Memulihkan Jiwa Dalaman",ic:"🤗",c:"#FCE8A6",desc:"Berdamai dengan masa lalu dan menyayangi diri sendiri."},
- {id:8,name:"Meningkatkan Keyakinan",ic:"🦸",c:"#CFE6F2",desc:"Membina anak yang berani mencuba dan tidak takut gagal."},
- {id:9,name:"Keibubapaan Tanpa Stres",ic:"🧘",c:"#CDEAD0",desc:"Rutin yang memudahkan dan menjaga diri sendiri."},
- {id:10,name:"Kecerdasan Emosi",ic:"🫀",c:"#CFE6F2",desc:"Membantu anak mengenal dan mengurus perasaan."},
- {id:11,name:"Nilai & Kemahiran Hidup",ic:"🌱",c:"#CDEAD0",desc:"Menanam tanggungjawab, adab dan kemahiran menyelesaikan masalah."},
- {id:12,name:"Visi Keibubapaan",ic:"🎯",c:"#FCE8A6",desc:"Menetapkan hala tuju jangka panjang keluarga anda."}
-];
-
-const DAYS = [
- {t:1,title:"Kenali Diri Anda Sebagai Ibu Bapa",
-  lesson:"Sebelum mengubah tingkah laku anak, kita perlu kenal diri sendiri. Setiap ibu bapa ada waktu paling sabar dan waktu paling mudah tercetus. Kesedaran ialah langkah pertama kepada perubahan.",
-  task:"Tulis 3 situasi minggu ini yang membuatkan anda hilang sabar. Untuk setiap satu, catat apa yang anda rasa dan apa yang anda lakukan.",
-  ref:"Apakah corak yang anda nampak? Pada waktu bila anda paling mudah tertekan?"},
- {t:1,title:"Warisan Cara Kita Dibesarkan",
-  lesson:"Cara kita dibesarkan banyak mempengaruhi cara kita mendidik, sama ada kita sedar atau tidak. Ada yang baik untuk diteruskan, ada yang perlu kita ubah.",
-  task:"Senaraikan 2 perkara daripada ibu bapa anda yang mahu anda teruskan, dan 1 perkara yang anda mahu ubah.",
-  ref:"Bagaimana perasaan anda ketika mengenang zaman kecil anda?"},
- {t:1,title:"Nilai Teras Keluarga",
-  lesson:"Keluarga yang ada nilai jelas lebih mudah membuat keputusan. Nilai menjadi kompas apabila kita keliru bagaimana mahu bertindak.",
-  task:"Pilih 3 nilai teras keluarga anda (contoh: jujur, hormat, kasih sayang, tanggungjawab). Tulis dan tampal di tempat yang mudah dilihat.",
-  ref:"Mengapa 3 nilai ini penting bagi anda?"},
- {t:2,title:"Kenali Pencetus Emosi",
-  lesson:"Kemarahan jarang datang tiba-tiba. Biasanya badan memberi tanda awal: dada berdebar, rahang tegang, suara meninggi. Mengenal tanda ini memberi kita peluang untuk berhenti.",
-  task:"Kenal pasti 3 pencetus utama anda (contoh: penat, bising, lambat pagi) dan tanda awal yang badan anda tunjukkan.",
-  ref:"Pencetus mana yang paling kerap? Apa yang boleh dikurangkan?"},
- {t:2,title:"Teknik BERHENTI",
-  lesson:"Gunakan teknik B-T-P-P: Berhenti seketika. Tarik nafas dalam 3 kali. Perhatikan apa yang berlaku dalam diri dan pada anak. Pilih respons, bukan reaksi.",
-  task:"Amalkan teknik BERHENTI sekurang-kurangnya sekali hari ini apabila anda rasa emosi mula naik.",
-  ref:"Apa yang berbeza apabila anda berhenti sebelum bertindak?"},
- {t:2,title:"Membaiki Selepas Marah",
-  lesson:"Tiada ibu bapa yang sempurna. Yang penting ialah membaiki hubungan selepas tersilap. Apabila kita meminta maaf, anak belajar bahawa kesilapan boleh dibaiki.",
-  task:"Jika anda pernah meninggikan suara baru-baru ini, peluk anak dan minta maaf dengan ikhlas: \"Ibu/Ayah minta maaf sebab marah tadi. Ibu/Ayah sayang kamu.\"",
-  ref:"Bagaimana reaksi anak anda? Apa yang anda rasa?"},
- {t:3,title:"Mendengar Aktif",
-  lesson:"Anak lebih mendengar apabila mereka rasa didengari. Mendengar aktif bermaksud memberi perhatian penuh, tidak menyampuk, dan memantulkan semula apa yang anak rasa.",
-  task:"Luangkan 10 minit mendengar cerita anak tanpa telefon dan tanpa menyampuk. Pantulkan semula: \"Oh, kamu rasa sedih sebab...\"",
-  ref:"Apa yang anda pelajari tentang anak hari ini?"},
- {t:3,title:"Gunakan Bahasa 'Saya'",
-  lesson:"Ayat 'Kamu ni selalu...' membuatkan anak rasa diserang. Bahasa 'Saya' menyatakan perasaan tanpa menyalahkan: \"Ibu rasa risau bila kamu lambat balik tanpa beritahu.\"",
-  task:"Tukar 3 ayat kritikan yang biasa anda guna kepada Bahasa 'Saya' dan cuba gunakannya.",
-  ref:"Adakah anak memberi respons yang berbeza?"},
- {t:3,title:"Arahan Yang Jelas & Positif",
-  lesson:"Arahan berkesan: dekati anak, tatap mata, ringkas, dan nyatakan apa yang PATUT dibuat. \"Jalan perlahan\" lebih berkesan daripada \"Jangan lari!\"",
-  task:"Beri semua arahan hari ini dalam bentuk positif dan dari jarak dekat, bukan menjerit dari jauh.",
-  ref:"Berapa kali anak ikut arahan tanpa perlu diulang?"},
- {t:4,title:"Tingkah Laku Ialah Mesej",
-  lesson:"Seperti gunung ais, tingkah laku hanya bahagian yang kelihatan. Di bawahnya ada keperluan: perhatian, rasa selamat, penat, lapar atau perasaan yang tidak tahu diluahkan.",
-  task:"Perhatikan satu tingkah laku sukar anak hari ini. Cuba teka keperluan apa yang tersembunyi di bawahnya.",
-  ref:"Jika anda melihat keperluan itu, bagaimana respons anda akan berubah?"},
- {t:4,title:"Faham Peringkat Umur Anak",
-  lesson:"Banyak konflik berlaku kerana jangkaan kita tidak sesuai dengan umur anak. Kanak-kanak 3 tahun belum mampu berkongsi dengan mudah; remaja memang perlukan ruang peribadi.",
-  task:"Cari 3 ciri perkembangan normal bagi umur anak anda. Adakah jangkaan anda selama ini sesuai?",
-  ref:"Jangkaan mana yang perlu anda sesuaikan?"},
- {t:4,title:"Semak L.M.S.P Dahulu",
-  lesson:"Sebelum menegur, semak: Adakah anak Lapar? Marah? Sunyi? Penat? Keperluan asas yang tidak dipenuhi sering menjadi punca 'perangai'.",
-  task:"Setiap kali anak meragam hari ini, semak L.M.S.P dahulu sebelum bertindak.",
-  ref:"Berapa kali punca sebenar ialah keperluan asas?"},
- {t:5,title:"Disiplin Bermaksud Mengajar",
-  lesson:"Perkataan 'disiplin' berasal daripada maksud 'mengajar'. Matlamatnya bukan membuat anak takut, tetapi membantu anak belajar mengawal diri.",
-  task:"Tulis 3 peraturan rumah dalam ayat positif (contoh: \"Kita bercakap dengan suara lembut\") dan bincang bersama anak.",
-  ref:"Bagaimana anak memberi respons apabila mereka terlibat membuat peraturan?"},
- {t:5,title:"Akibat Logik, Bukan Hukuman",
-  lesson:"Akibat yang baik ialah Berkait dengan kesalahan, Hormat (tidak memalukan) dan Munasabah. Contoh: tumpahkan air, bantu lap; bukan 'tiada TV seminggu'.",
-  task:"Rancang satu akibat logik untuk masalah yang kerap berlaku di rumah anda.",
-  ref:"Apakah perbezaan akibat logik dengan hukuman yang biasa anda guna?"},
- {t:5,title:"Pujian Yang Berkesan",
-  lesson:"Pujian umum seperti 'Pandainya!' kurang berkesan. Pujian spesifik tentang usaha lebih membina: \"Ibu nampak kamu cuba berkali-kali sampai siap.\"",
-  task:"Beri 5 pujian spesifik tentang usaha anak hari ini.",
-  ref:"Bagaimana wajah anak ketika menerima pujian itu?"},
- {t:6,title:"Masa Istimewa 15 Minit",
-  lesson:"15 minit perhatian penuh setiap hari boleh mengurangkan banyak masalah tingkah laku. Anak yang 'tangki kasihnya' penuh kurang mencari perhatian dengan cara negatif.",
-  task:"Luangkan 15 minit tanpa telefon. Biar anak pilih aktiviti dan anda ikut rentaknya.",
-  ref:"Apa yang anak paling suka semasa masa istimewa itu?"},
- {t:6,title:"Bahasa Kasih Anak",
-  lesson:"Setiap anak menerima kasih sayang dengan cara berbeza: sentuhan, kata-kata, masa berkualiti, hadiah kecil atau bantuan. Kenali bahasa kasih anak anda.",
-  task:"Perhatikan bagaimana anak menunjukkan kasih sayang kepada anda; itu petunjuk bahasa kasihnya. Balas dengan bahasa yang sama.",
-  ref:"Apakah bahasa kasih utama setiap anak anda?"},
- {t:6,title:"Ritual Keluarga",
-  lesson:"Ritual kecil yang diulang memberi rasa selamat: cerita sebelum tidur, makan malam bersama, pelukan sebelum ke sekolah.",
-  task:"Wujudkan satu ritual kecil baharu dan mulakan malam ini.",
-  ref:"Ritual apa yang anda harap anak akan kenang apabila dewasa?"},
- {t:7,title:"Berdamai Dengan Masa Lalu",
-  lesson:"Luka zaman kecil kadangkala muncul semula ketika kita mendidik anak. Mengakui luka itu membantu kita berhenti mewariskannya.",
-  task:"Tulis surat ringkas kepada diri anda semasa kecil. Katakan apa yang anda perlu dengar ketika itu.",
-  ref:"Apa yang anda rasa selepas menulis surat itu?"},
- {t:7,title:"Belas Kasihan Kepada Diri",
-  lesson:"Ibu bapa yang terlalu mengkritik diri lebih mudah tertekan. Layan diri anda seperti anda melayan sahabat baik yang sedang berusaha.",
-  task:"Tulis 3 perkara yang anda telah lakukan dengan baik sebagai ibu bapa minggu ini.",
-  ref:"Mengapa kadangkala sukar untuk menghargai diri sendiri?"},
- {t:8,title:"Biar Anak Mencuba",
-  lesson:"Keyakinan dibina melalui pengalaman 'Saya boleh!'. Apabila kita terlalu cepat membantu, anak terlepas peluang untuk rasa mampu.",
-  task:"Beri anak satu tugasan sesuai umur untuk dibuat sendiri (contoh: susun beg, tuang air, buat sarapan ringkas). Tahan diri daripada campur tangan.",
-  ref:"Bagaimana anak berasa selepas berjaya sendiri?"},
- {t:8,title:"Minda Berkembang",
-  lesson:"Ajar anak menambah perkataan 'BELUM' — \"Saya belum pandai lagi.\" Kegagalan ialah sebahagian daripada belajar, bukan tanda tidak bijak.",
-  task:"Kongsi dengan anak satu kisah kegagalan anda dan apa yang anda pelajari daripadanya.",
-  ref:"Apakah reaksi anak mendengar kisah anda?"},
- {t:9,title:"Rutin Yang Memudahkan",
-  lesson:"Rutin yang jelas mengurangkan pertelingkahan kerana anak tahu apa yang dijangka. Carta bergambar sangat membantu anak kecil.",
-  task:"Lukis carta rutin pagi atau malam bersama anak dan tampal di dinding.",
-  ref:"Bahagian rutin mana yang paling banyak konflik sebelum ini?"},
- {t:9,title:"Isi Cawan Sendiri",
-  lesson:"Kita tidak boleh menuang dari cawan yang kosong. Menjaga diri bukan sifat mementingkan diri; ia keperluan supaya kita boleh hadir untuk anak.",
-  task:"Ambil 20 minit untuk diri sendiri hari ini: berjalan, membaca, beribadah atau berehat.",
-  ref:"Apa yang paling mengisi tenaga anda?"},
- {t:10,title:"Namakan Emosi",
-  lesson:"Anak yang boleh menamakan perasaan lebih mudah mengawalnya. \"Nampaknya kamu kecewa sebab menara blok jatuh.\"",
-  task:"Bantu anak menamakan perasaannya sekurang-kurangnya 3 kali hari ini.",
-  ref:"Emosi apa yang paling sukar dinamakan oleh anak anda?"},
- {t:10,title:"Terima Perasaan, Hadkan Tingkah Laku",
-  lesson:"Semua perasaan boleh diterima, tetapi bukan semua tingkah laku. \"Boleh rasa marah. Tak boleh pukul adik. Jom tumbuk bantal.\"",
-  task:"Gunakan formula ini apabila anak marah: Akui perasaan → Nyatakan had → Beri pilihan lain.",
-  ref:"Adakah anak lebih cepat tenang dengan cara ini?"},
- {t:11,title:"Tanggungjawab Melalui Kerja Rumah",
-  lesson:"Kerja rumah mengajar anak bahawa mereka sebahagian penting daripada keluarga. Mulakan kecil dan sesuai umur.",
-  task:"Senaraikan 2 kerja rumah sesuai umur untuk setiap anak dan mulakan minggu ini.",
-  ref:"Bagaimana anda boleh menjadikan kerja rumah lebih menyeronokkan?"},
- {t:11,title:"Selesaikan Masalah Bersama",
-  lesson:"Gunakan 4 langkah: 1) Apa masalahnya? 2) Apa idea penyelesaian? 3) Apa akan berlaku jika cuba setiap idea? 4) Pilih dan cuba.",
-  task:"Gunakan 4 langkah ini bersama anak untuk satu masalah sebenar (contoh: berebut mainan, lambat siap kerja sekolah).",
-  ref:"Idea apa yang datang daripada anak sendiri?"},
- {t:12,title:"Anak Saya 20 Tahun Akan Datang",
-  lesson:"Bayangkan anak anda sebagai orang dewasa. Apa yang kita buat hari ini sedang membentuk insan itu.",
-  task:"Tulis 5 sifat yang anda harap ada pada anak anda apabila dewasa. Fikirkan satu tindakan harian yang menyokong setiap sifat.",
-  ref:"Adakah cara anda mendidik hari ini selari dengan visi itu?"},
- {t:12,title:"Pelan Tindakan Keluarga",
-  lesson:"Tahniah! Anda telah sampai ke hari ke-30. Perubahan sebenar berlaku apabila amalan kecil diteruskan setiap hari.",
-  task:"Pilih 3 amalan daripada program ini yang paling memberi kesan dan komited untuk meneruskannya 30 hari lagi.",
-  ref:"Apakah perubahan terbesar yang anda lihat pada diri dan keluarga?"}
-];
-
-const QUOTES = [
- "Anak tidak perlukan ibu bapa yang sempurna, mereka perlukan ibu bapa yang hadir.",
- "Respons yang tenang bermula dengan nafas yang tenang.",
- "Di sebalik setiap tingkah laku, ada keperluan yang belum dipenuhi.",
- "Hubungan dahulu, pembetulan kemudian.",
- "Kesilapan ialah peluang untuk mengajar, bukan untuk menghukum.",
- "Ibu bapa tenang, anak-anak yakin.",
- "Apa yang anda sirami, itulah yang akan tumbuh."
-];
-
 /* ================= STORAGE ================= */
 const KEY="parentpro_v1";
 let S;
 try{ S = JSON.parse(localStorage.getItem(KEY)) || {}; }catch(e){ S={}; }
-S.done = S.done || {};      // {dayIndex: dateString}
-S.notes = S.notes || {};    // {dayIndex: text}
-S.mood = S.mood || {};      // {date: emoji}
-S.name = S.name || "";
+function init(){
+  S.done=S.done||{}; S.notes=S.notes||{}; S.mood=S.mood||{}; S.name=S.name||"";
+  S.parent2=S.parent2||""; S.kids=S.kids||[]; S.emo=S.emo||{}; S.qa=S.qa||{};
+  S.checks=S.checks||{}; S.games=S.games||[]; S.ideas=S.ideas||{};
+}
+init();
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
 
 /* ================= HELPERS ================= */
 const $ = s => document.querySelector(s);
 const app = $("#app");
-const today = () => new Date().toISOString().slice(0,10);
+const ld = (d=new Date()) => new Date(d.getTime()-d.getTimezoneOffset()*60000).toISOString().slice(0,10);
+const today = () => ld();
+const dayNum = (ds=today()) => Math.floor(Date.parse(ds)/864e5);
+const weekNum = (ds=today()) => Math.floor((dayNum(ds)-4)/7);   // minggu bermula Isnin
+const gameOfWeek = () => ((weekNum()%GAMES.length)+GAMES.length)%GAMES.length;
 const doneCount = () => Object.keys(S.done).length;
 const nextDay = () => { for(let i=0;i<30;i++) if(!S.done[i]) return i; return 29; };
 const topic = id => TOPICS.find(x=>x.id===id);
-function esc(s){return (s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+const kidById = id => S.kids.find(k=>k.id===id);
+const members = () => [S.name||"Ibu/Ayah", S.parent2].filter(Boolean).concat(S.kids.map(k=>k.name));
+function esc(s){return (s==null?"":s).toString().replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");setTimeout(()=>t.classList.remove("on"),1800)}
+function fmtDate(ds){const d=new Date(ds+"T00:00:00");return d.toLocaleDateString("ms-MY",{weekday:"short",day:"numeric",month:"short"})}
+function rng(seed){return ()=>{seed=(seed*1103515245+12345)%2147483648;return seed/2147483648}}
+
+let selKid=null;
+function curKid(){ if(!selKid||!kidById(selKid)) selKid=S.kids[0]&&S.kids[0].id; return selKid; }
+function kidChips(fn){
+  return `<div class="chips">${S.kids.map(k=>`<button class="chip ${k.id===curKid()?"on":""}" onclick="selKid='${k.id}';${fn}">${esc(k.name)}</button>`).join("")}</div>`;
+}
+
+/* ---------- Misi harian ---------- */
+function missionDone(id,ds=today()){
+  if(id==="emo") return !!(S.emo[ds]&&Object.keys(S.emo[ds]).length);
+  if(id==="qa") return !!(S.qa[ds]&&Object.values(S.qa[ds]).some(x=>x.done));
+  return !!(S.checks[ds]&&S.checks[ds][id]);
+}
+const missionCount = ds => MISSIONS.filter(m=>missionDone(m.id,ds)).length;
 function streak(){
-  const days=new Set(Object.values(S.done)); let n=0; const d=new Date();
-  if(!days.has(d.toISOString().slice(0,10))) d.setDate(d.getDate()-1);
-  while(days.has(d.toISOString().slice(0,10))){n++; d.setDate(d.getDate()-1);}
+  let n=0; const d=new Date();
+  if(missionCount(ld(d))<3) d.setDate(d.getDate()-1);
+  while(missionCount(ld(d))>=3){ n++; d.setDate(d.getDate()-1); }
   return n;
 }
 
-let stack=[];
+/* ---------- Soalan harian ---------- */
+function todaysQuestions(kidId){
+  const ds=today(); S.qa[ds]=S.qa[ds]||{};
+  if(!S.qa[ds][kidId]){
+    const ki=S.kids.findIndex(k=>k.id===kidId);
+    const r=rng(dayNum(ds)*97+ki*13+7);
+    const idx=QUESTIONS.map((q,i)=>i);
+    const feel=idx.filter(i=>QUESTIONS[i].c==="perasaan");
+    const others=idx.filter(i=>QUESTIONS[i].c!=="perasaan");
+    const pick=[feel[Math.floor(r()*feel.length)]];
+    const usedCats=new Set(); let guard=0;
+    while(pick.length<5 && guard++<500){
+      const i=others[Math.floor(r()*others.length)];
+      if(!pick.includes(i)&&!usedCats.has(QUESTIONS[i].c)){pick.push(i);usedCats.add(QUESTIONS[i].c);}
+    }
+    S.qa[ds][kidId]={q:pick,a:{},done:false};
+  }
+  return S.qa[ds][kidId];
+}
+
+/* ================= NAVIGATION ================= */
+let stack=[], current=null;
 function go(view,arg,push=true){
   if(push && current) stack.push(current);
-  current={view,arg};
-  render();
+  current={view,arg}; render();
 }
-let current=null;
 $("#back").onclick=()=>{ current=stack.pop()||{view:"home"}; render(); };
 document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{stack=[];current=null;go(b.dataset.tab)});
 document.addEventListener("backbutton",()=>{ if(stack.length) $("#back").click(); },false);
 
+const TABOF={home:"home",family:"home",emo:"emo",qa:"qa",memories:"qa",games:"games",game:"games"};
 function setHeader(title){
   $("#title").textContent=title;
   $("#back").style.display=stack.length?"block":"none";
-  const tab = {home:"home",program:"program",day:"program",topics:"topics",topic:"topics",calm:"calm",journal:"journal",settings:"home"}[current.view];
+  const tab=TABOF[current.view]||"more";
   document.querySelectorAll("nav button").forEach(b=>b.classList.toggle("on",b.dataset.tab===tab));
   window.scrollTo(0,0);
 }
@@ -282,53 +206,288 @@ function setHeader(title){
 /* ================= VIEWS ================= */
 const V={};
 
+/* ---------- Profil keluarga (juga skrin pertama) ---------- */
+V.family=()=>{
+  setHeader("Profil Keluarga");
+  const kids=S.kids.length?S.kids:[{id:"",name:"",age:""}];
+  app.innerHTML=`
+  ${!S.kids.length?`<div class="card hero"><img src="keluarga.jpg" alt=""><div class="in">
+    <h2 style="margin-top:0">Selamat datang ke ParentPro 👋</h2>
+    <p class="muted" style="margin:0">Hanya 10 minit sehari untuk merapatkan hubungan anda dengan anak-anak. Mulakan dengan mengisi profil keluarga.</p></div></div>`:""}
+  <div class="card">
+    <b>Nama anda</b><input id="p1" value="${esc(S.name)}" placeholder="Contoh: Ibu Aishah">
+    <div style="height:10px"></div>
+    <b>Pasangan <span class="muted">(pilihan)</span></b><input id="p2" value="${esc(S.parent2)}" placeholder="Contoh: Ayah Hafiz">
+  </div>
+  <div class="card"><b>Anak-anak</b>
+    <div id="kids">${kids.map(k=>kidRowHtml(k)).join("")}</div>
+    <button class="btn ghost" onclick="addKidRow()">＋ Tambah anak</button>
+  </div>
+  <button class="btn" onclick="saveFamily()">Simpan</button>`;
+};
+function kidRowHtml(k){return `<div class="kidrow" data-id="${esc(k.id)}">
+  <input class="kn" value="${esc(k.name)}" placeholder="Nama anak">
+  <input class="age" type="number" min="1" max="18" value="${esc(k.age)}" placeholder="Umur">
+  <button class="x" onclick="this.parentNode.remove()">✕</button></div>`;}
+window.addKidRow=()=>{$("#kids").insertAdjacentHTML("beforeend",kidRowHtml({id:"",name:"",age:""}));};
+window.saveFamily=()=>{
+  const rows=[...document.querySelectorAll(".kidrow")];
+  const kids=rows.map(r=>({id:r.dataset.id||("k"+Date.now().toString(36)+Math.random().toString(36).slice(2,6)),
+    name:r.querySelector(".kn").value.trim(),age:r.querySelector(".age").value})).filter(k=>k.name);
+  if(!kids.length){toast("Masukkan sekurang-kurangnya seorang anak");return;}
+  S.name=$("#p1").value.trim(); S.parent2=$("#p2").value.trim(); S.kids=kids; save();
+  toast("Profil disimpan ✅"); stack=[]; current=null; go("home");
+};
+
+/* ---------- Utama ---------- */
 V.home=()=>{
-  const n=doneCount(), nd=nextDay(), d=DAYS[nd], tp=topic(d.t);
+  if(!S.kids.length){ current={view:"family"}; return V.family(); }
+  const ds=today(), mc=missionCount(ds);
   const q=QUOTES[new Date().getDate()%QUOTES.length];
-  const m=S.mood[today()];
+  const g=GAMES[gameOfWeek()];
+  const played=S.games.some(x=>x.week===weekNum());
+  const emoToday=S.emo[ds]||{};
   setHeader("ParentPro");
   app.innerHTML=`
-  <div class="card hero"><img src="keluarga.jpg" alt="">
-    <div class="in">
-      <h2 style="margin-top:0">${S.name?"Assalamualaikum, "+esc(S.name)+" 👋":"Program Bimbingan Hidup 30 Hari"}</h2>
-      <span class="tag">Ibu Bapa Tenang, Anak-Anak Yakin</span>
-    </div></div>
-
   <div class="card">
+    <h2 style="margin-top:0">${S.name?"Hai, "+esc(S.name)+" 👋":"Hai! 👋"}</h2>
     <div class="stats">
-      <div class="stat"><b>${n}/30</b><span>Hari selesai</span></div>
+      <div class="stat"><b>${mc}/${MISSIONS.length}</b><span>Misi hari ini</span></div>
       <div class="stat"><b>${streak()}🔥</b><span>Hari berturut</span></div>
-      <div class="stat"><b>${Math.round(n/30*100)}%</b><span>Kemajuan</span></div>
+      <div class="stat"><b>${S.games.length}</b><span>Permainan</span></div>
     </div>
-    <div class="bar"><i style="width:${n/30*100}%"></i></div>
   </div>
 
   <div class="card">
-    <div class="muted">${n===30?"🎉 Program selesai! Ulang kaji bila-bila masa":"Pelajaran seterusnya"}</div>
-    <h2>Hari ${nd+1}: ${d.title}</h2>
-    <div class="muted">${tp.ic} ${tp.name}</div>
-    <button class="btn" onclick="go('day',${nd})">Mula Hari ${nd+1} ›</button>
+    <b>🎯 Misi Ikatan Hari Ini</b>
+    <div class="bar"><i style="width:${mc/MISSIONS.length*100}%"></i></div>
+    ${MISSIONS.map(m=>{const ok=missionDone(m.id);return `
+      <button class="mission ${ok?"ok":""}" onclick="mission('${m.id}')">
+        <span class="ic">${m.ic}</span><span class="t">${m.t}</span><span class="chk">${ok?"✅":"⬜"}</span></button>`}).join("")}
+    ${mc===MISSIONS.length?`<p style="text-align:center;margin:8px 0 0">🎉 Semua misi selesai. Anak anda bertuah!</p>`:""}
   </div>
 
   <div class="card">
-    <b>Bagaimana perasaan anda hari ini?</b>
-    <div class="moods">${["😄","🙂","😐","😟","😫"].map(e=>`<button class="${m===e?"on":""}" onclick="setMood('${e}')">${e}</button>`).join("")}</div>
-    ${m==="😟"||m==="😫"?`<button class="btn alt" onclick="go('calm')">🌿 Cuba latihan pernafasan 1 minit</button>`:""}
+    <b>💗 Emosi anak hari ini</b>
+    ${S.kids.map(k=>{const e=emoToday[k.id];const em=e&&EMOTIONS.find(x=>x.n===e.n);return `
+      <div class="row" onclick="selKid='${k.id}';emoPick=null;go('emo')"><div class="ic">${em?em.e:"❔"}</div>
+      <div class="t"><b>${esc(k.name)}</b><span class="muted">${em?em.n+(e.why?" · "+esc(e.why):""):"Belum disemak. Tekan untuk semak"}</span></div><span>›</span></div>`}).join("")}
   </div>
 
-  <div class="card"><p class="quote">${q}</p></div>
-  <button class="btn ghost" onclick="go('settings')">⚙️ Tetapan</button>
-  <div class="footer">Fun Learning with Teacher Sha<br>B.Ed, 13 Tahun Pengalaman Mengajar, Jurulatih TTT Bertauliah (8181)</div>`;
+  <div class="card">
+    <span class="muted">Permainan keluarga minggu ini</span>
+    <h2>${g.ic} ${g.n}</h2>
+    <span class="pill">⏱ ${g.time}</span><span class="pill">${played?"✅ Sudah dimainkan":"Belum dimainkan"}</span>
+    <button class="btn alt" onclick="go('games')">Lihat cara bermain ›</button>
+  </div>
+
+  <div class="card">
+    <span class="muted">Untuk Ibu Bapa · Program 30 Hari</span>
+    <h3 style="margin-top:4px">Hari ${nextDay()+1}: ${DAYS[nextDay()].title}</h3>
+    <div class="bar"><i style="width:${doneCount()/30*100}%"></i></div>
+    <button class="btn ghost" onclick="go('day',${nextDay()})">Buka pelajaran ›</button>
+  </div>
+
+  <div class="card"><p class="quote" style="margin:0">${q}</p></div>
+  <div class="footer">ParentPro by Teacher Sha · Fun Learning with Teacher Sha</div>`;
 };
-window.setMood=e=>{S.mood[today()]=e;save();render();};
+window.mission=id=>{
+  if(id==="emo"){ emoPick=null; return go("emo"); }
+  if(id==="qa") return go("qa");
+  const ds=today(); S.checks[ds]=S.checks[ds]||{}; S.checks[ds][id]=!S.checks[ds][id]; save();
+  if(S.checks[ds][id]) toast("Syabas! 🌟"); render();
+};
 
+/* ---------- Semakan emosi ---------- */
+let emoPick=null;
+V.emo=()=>{
+  if(!S.kids.length){ current={view:"family"}; return V.family(); }
+  const k=kidById(curKid()), ds=today(), saved=(S.emo[ds]||{})[k.id];
+  if(emoPick===null && saved) emoPick=saved.n;
+  const em=EMOTIONS.find(x=>x.n===emoPick);
+  setHeader("Semakan Emosi");
+  const days=[...Array(7)].map((_,i)=>{const d=new Date();d.setDate(d.getDate()-6+i);return ld(d)});
+  app.innerHTML=`
+  ${kidChips("emoPick=null;render()")}
+  <div class="card" style="text-align:center">
+    <h2 style="margin-top:0">Hai ${esc(k.name)}! 👋</h2>
+    <p style="margin:0">Apa perasaan kamu hari ini?</p>
+    <p class="muted" style="margin:4px 0 12px">Biar anak sendiri yang pilih</p>
+    <div class="grid" style="grid-template-columns:repeat(4,1fr)">
+      ${EMOTIONS.map(x=>`<button class="emo ${emoPick===x.n?"on":""}" style="background:${x.c}" onclick="emoPick='${x.n}';render()"><span class="e">${x.e}</span>${x.n}</button>`).join("")}
+    </div>
+  </div>
+  ${em?`<div class="card">
+    <b>Kenapa kamu rasa ${em.n.toLowerCase()}?</b> <span class="muted">(pilihan)</span>
+    <textarea id="why" placeholder="Tulis apa yang anak ceritakan...">${esc(saved&&saved.n===em.n?saved.why:"")}</textarea>
+    <div class="box task"><b>💡 Tip untuk Ibu/Ayah</b><br>${em.tip}</div>
+    <button class="btn" onclick="saveEmo()">💾 Simpan</button>
+  </div>`:""}
+  <div class="card"><b>7 hari ${esc(k.name)}</b>
+    <div class="week" style="margin-top:8px">${days.map(d=>{const e=(S.emo[d]||{})[k.id];const x=e&&EMOTIONS.find(z=>z.n===e.n);
+      return `<div><b>${x?x.e:"·"}</b>${new Date(d+"T00:00:00").toLocaleDateString("ms-MY",{weekday:"short"})}</div>`}).join("")}</div>
+  </div>`;
+};
+window.saveEmo=()=>{
+  const ds=today(); S.emo[ds]=S.emo[ds]||{};
+  const name=kidById(curKid()).name;
+  S.emo[ds][curKid()]={n:emoPick,why:($("#why")||{}).value||""}; save();
+  toast("Emosi "+name+" disimpan 💗");
+  const next=S.kids.find(k=>!(S.emo[ds]||{})[k.id]);
+  if(next){selKid=next.id;emoPick=null;}
+  render();
+};
+
+/* ---------- Soal jawab 10 minit ---------- */
+let timerLeft=600, timerRun=null;
+function fmtT(s){return String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0")}
+V.qa=()=>{
+  if(!S.kids.length){ current={view:"family"}; return V.family(); }
+  const k=kidById(curKid()), set=todaysQuestions(k.id); save();
+  setHeader("Soal Jawab Harian");
+  app.innerHTML=`
+  ${kidChips("render()")}
+  <div class="card" style="text-align:center">
+    <span class="muted">Luangkan 10 minit bersama ${esc(k.name)}. Tanya, dengar dan catat jawapannya.</span>
+    <div class="timer" id="tm">${fmtT(timerLeft)}</div>
+    <button class="btn sm ${timerRun?"ghost":""}" onclick="toggleTimer()">${timerRun?"⏸ Jeda":"▶ Mula 10 Minit"}</button>
+    <button class="btn sm ghost" onclick="resetTimer()">↺</button>
+  </div>
+  <div class="card">
+    <b>Soalan untuk ${esc(k.name)} hari ini</b>
+    ${set.q.map((qi,n)=>{const Q=QUESTIONS[qi],C=QCATS[Q.c];return `
+      <div class="qcard">
+        <div class="tools"><span class="pill">${C.ic} ${C.n}</span>
+          ${set.done?"":`<button class="link" onclick="swapQ(${n})">🔄 Soalan lain</button>`}</div>
+        <div class="q">${n+1}. ${Q.q}</div>
+        <textarea class="ans" data-q="${qi}" placeholder="Jawapan ${esc(k.name)}..." oninput="saveAns(this)">${esc(set.a[qi])}</textarea>
+      </div>`}).join("")}
+    <button class="btn ${set.done?"done":""}" onclick="finishQA()">${set.done?"✅ Selesai hari ini":"Selesai Sesi Hari Ini"}</button>
+  </div>
+  <button class="btn ghost" onclick="go('memories')">📚 Buku Kenangan</button>`;
+};
+window.saveAns=el=>{const set=todaysQuestions(curKid());set.a[el.dataset.q]=el.value;save();};
+window.swapQ=n=>{
+  const set=todaysQuestions(curKid()), cur=QUESTIONS[set.q[n]];
+  const idx=QUESTIONS.map((q,i)=>i);
+  const pool=idx.filter(i=>QUESTIONS[i].c===cur.c&&!set.q.includes(i));
+  const alt=pool.length?pool:idx.filter(i=>!set.q.includes(i));
+  delete set.a[set.q[n]]; set.q[n]=alt[Math.floor(Math.random()*alt.length)]; save(); render();
+};
+window.finishQA=()=>{
+  const set=todaysQuestions(curKid());
+  document.querySelectorAll(".ans").forEach(el=>set.a[el.dataset.q]=el.value);
+  set.done=!set.done; save();
+  if(set.done){toast("Hebat! Sesi bersama "+kidById(curKid()).name+" selesai 🎉"); if(timerRun){clearInterval(timerRun);timerRun=null;}}
+  render();
+};
+window.toggleTimer=()=>{
+  if(timerRun){clearInterval(timerRun);timerRun=null;render();return;}
+  timerRun=setInterval(()=>{
+    timerLeft--; const t=$("#tm"); if(t) t.textContent=fmtT(Math.max(timerLeft,0));
+    if(timerLeft<=0){clearInterval(timerRun);timerRun=null;timerLeft=600;toast("⏰ 10 minit tamat. Terima kasih kerana hadir!");if(current.view==="qa")render();}
+  },1000); render();
+};
+window.resetTimer=()=>{ if(timerRun){clearInterval(timerRun);timerRun=null;} timerLeft=600; render(); };
+
+V.memories=()=>{
+  const k=kidById(curKid());
+  setHeader("Buku Kenangan");
+  const dates=Object.keys(S.qa).sort().reverse().filter(d=>{const x=S.qa[d][k.id];return x&&Object.values(x.a).some(v=>v&&v.trim())});
+  app.innerHTML=kidChips("render()")+(dates.length?dates.map(d=>{const x=S.qa[d][k.id];return `
+    <div class="card"><span class="muted">${fmtDate(d)}</span>
+      ${x.q.filter(qi=>x.a[qi]&&x.a[qi].trim()).map(qi=>`<p style="margin:8px 0 0"><b>${QUESTIONS[qi].q}</b><br>“${esc(x.a[qi])}”</p>`).join("")}</div>`}).join("")
+    :`<div class="card" style="text-align:center"><div style="font-size:48px">📚</div><p>Belum ada jawapan disimpan untuk ${esc(k.name)}.<br><span class="muted">Jawapan daripada sesi soal jawab akan jadi kenangan di sini.</span></p></div>`);
+};
+
+/* ---------- Permainan keluarga ---------- */
+V.games=()=>{
+  const wi=gameOfWeek();
+  setHeader("Permainan Keluarga");
+  const tot={}; members().forEach(m=>tot[m]=0);
+  S.games.forEach(r=>Object.entries(r.scores).forEach(([n,s])=>tot[n]=(tot[n]||0)+(+s||0)));
+  const ranks=Object.entries(tot).sort((a,b)=>b[1]-a[1]);
+  app.innerHTML=`
+  <div class="card"><span class="muted">⭐ Permainan minggu ini</span>${gameBody(wi)}
+    <button class="btn" onclick="go('game',${wi})">📝 Rekod Skor</button></div>
+  <div class="card"><b>🏆 Carta Juara Keluarga</b>
+    ${ranks.map(([n,s],i)=>`<div class="rank"><span class="pos">${["🥇","🥈","🥉"][i]||i+1}</span><span class="nm">${esc(n)}</span><span class="sc">${s}</span></div>`).join("")}
+    <p class="muted" style="margin:4px 0 0">Jumlah mata daripada semua permainan</p></div>
+  ${S.games.length?`<div class="card"><b>📜 Sejarah Permainan</b>${S.games.slice().reverse().map(r=>{const g=GAMES[r.g];const w=Object.entries(r.scores).sort((a,b)=>b[1]-a[1])[0];return `
+    <div class="row"><div class="ic">${g.ic}</div><div class="t"><b>${g.n}</b><span class="muted">${fmtDate(r.date)}${w?" · Juara: "+esc(w[0]):""}${r.note?" · "+esc(r.note):""}</span></div></div>`}).join("")}</div>`:""}
+  <div class="card"><b>🎲 Semua Permainan</b>${GAMES.map((g,i)=>`
+    <div class="row" onclick="go('game',${i})"><div class="ic">${g.ic}</div><div class="t"><b>${g.n}</b><span class="muted">${g.time}</span></div><span>›</span></div>`).join("")}</div>`;
+};
+function gameBody(i){const g=GAMES[i];return `
+  <h2>${g.ic} ${g.n}</h2><span class="pill">⏱ ${g.time}</span><span class="pill">🧰 ${g.items}</span>
+  <h3>Cara bermain</h3><p style="margin:0">${g.how}</p>
+  <div class="box task"><b>🏅 Cara kira mata</b><br>${g.score}</div>`;}
+V.game=(i)=>{
+  setHeader("Rekod Skor");
+  app.innerHTML=`<div class="card">${gameBody(i)}</div>
+  <div class="card"><b>Masukkan skor setiap pemain</b>
+    ${members().map(m=>`<div class="kidrow"><span style="flex:1;font-weight:600">${esc(m)}</span><input type="number" class="sc" data-n="${esc(m)}" min="0" placeholder="0"></div>`).join("")}
+    <input id="gnote" placeholder="Catatan (contoh: Adik menang buat kali pertama!)" style="margin-top:8px">
+    <button class="btn" onclick="saveGame(${i})">💾 Simpan Skor</button></div>`;
+};
+window.saveGame=i=>{
+  const scores={}; document.querySelectorAll(".sc").forEach(el=>{if(el.value!=="") scores[el.dataset.n]=+el.value;});
+  if(!Object.keys(scores).length){toast("Masukkan sekurang-kurangnya satu skor");return;}
+  S.games.push({g:i,date:today(),week:weekNum(),scores,note:$("#gnote").value.trim()}); save();
+  toast("Skor disimpan 🏆"); stack=[]; current=null; go("games");
+};
+
+/* ---------- Idea masa bersama ---------- */
+V.ideas=()=>{
+  setHeader("Idea Masa Bersama");
+  const cats=[...new Set(IDEAS.map(x=>x.k))];
+  const n=Object.keys(S.ideas).length;
+  app.innerHTML=`
+  <div class="card"><b>${n} daripada ${IDEAS.length} idea sudah dicuba</b><div class="bar"><i style="width:${n/IDEAS.length*100}%"></i></div>
+    <button class="btn alt" onclick="randomIdea()">🎁 Beri saya idea rawak</button><div id="rand"></div></div>
+  ${cats.map(c=>`<div class="card"><b>${IDEAS.find(x=>x.k===c).ic} ${c}</b>${IDEAS.map((x,i)=>x.k!==c?"":`
+    <div class="row" onclick="toggleIdea(${i})"><div class="t">${x.t}${S.ideas[i]?`<br><span class="muted">Dibuat ${fmtDate(S.ideas[i])}</span>`:""}</div><span class="chk">${S.ideas[i]?"✅":"⬜"}</span></div>`).join("")}</div>`).join("")}`;
+};
+window.toggleIdea=i=>{ if(S.ideas[i]) delete S.ideas[i]; else {S.ideas[i]=today();toast("Kenangan baru tercipta 💛");} save(); render(); };
+window.randomIdea=()=>{
+  const left=IDEAS.map((x,i)=>i).filter(i=>!S.ideas[i]); const pool=left.length?left:IDEAS.map((x,i)=>i);
+  const i=pool[Math.floor(Math.random()*pool.length)];
+  $("#rand").innerHTML=`<div class="box task" style="margin-bottom:0"><b>${IDEAS[i].ic} ${IDEAS[i].t}</b></div>`;
+};
+
+/* ---------- Lagi ---------- */
+V.more=()=>{
+  setHeader("Lagi");
+  const item=(ic,t,s,act)=>`<div class="row" onclick="${act}"><div class="ic">${ic}</div><div class="t"><b>${t}</b><span class="muted">${s}</span></div><span>›</span></div>`;
+  app.innerHTML=`
+  <div class="card">
+    ${item("🌈","Idea Masa Bersama","Aktiviti keluarga yang murah & mudah","go('ideas')")}
+    ${item("📚","Buku Kenangan","Jawapan anak-anak daripada sesi soal jawab","go('memories')")}
+  </div>
+  <div class="card"><span class="muted">Untuk Ibu Bapa</span>
+    ${item("📅","Program 30 Hari","Bimbingan hidup untuk ibu bapa ("+doneCount()+"/30)","go('program')")}
+    ${item("🧩","12 Topik Keibubapaan","Kesedaran diri, emosi, disiplin positif & lagi","go('topics')")}
+    ${item("🌿","Sudut Tenang","Latihan pernafasan bila rasa tertekan","go('calm')")}
+    ${item("📔","Jurnal Saya","Catatan refleksi program 30 hari","go('journal')")}
+  </div>
+  <div class="card premium"><h2 style="margin-top:0">⭐ ParentPro Premium</h2>
+    <p class="muted" style="margin:0">Program dalam talian bersama Teacher Sha, checklist harian penuh dan kandungan baharu setiap minggu. <b>Akan datang!</b></p></div>
+  <div class="card">
+    ${item("👨‍👩‍👧","Profil Keluarga","Tambah atau ubah nama anak-anak","go('family')")}
+    ${item("🗑","Set Semula Data","Padam semua rekod dalam telefon ini","resetAll()")}
+  </div>
+  <div class="footer">ParentPro by Teacher Sha v2.0<br>Fun Learning with Teacher Sha<br>B.Ed, 13 Tahun Pengalaman Mengajar, Jurulatih TTT Bertauliah (8181)</div>`;
+};
+window.resetAll=()=>{ if(confirm("Padam SEMUA rekod (emosi, jawapan, skor, kemajuan)?")){ S={}; init(); save(); toast("Data diset semula"); stack=[]; current=null; go("home"); } };
+
+/* ---------- Program 30 hari (ibu bapa) ---------- */
 V.program=()=>{
   const nd=nextDay();
   setHeader("Program 30 Hari");
   app.innerHTML=`
   <div class="card"><b>${doneCount()} daripada 30 hari selesai</b>
     <div class="bar"><i style="width:${doneCount()/30*100}%"></i></div>
-    <div class="muted">Tekan nombor hari untuk membuka pelajaran.</div></div>
+    <div class="muted">Bimbingan untuk ibu bapa. Tekan nombor hari untuk membuka pelajaran.</div></div>
   <div class="card"><div class="days">
    ${DAYS.map((d,i)=>`<button class="d ${S.done[i]?"ok":""} ${i===nd&&!S.done[i]?"today":""}" onclick="go('day',${i})">${S.done[i]?"✓":i+1}</button>`).join("")}
   </div></div>
@@ -338,7 +497,6 @@ V.program=()=>{
       <div class="t"><b>Hari ${i+1}: ${d.title}</b><span class="muted">${t.name}</span></div>
       <span class="chk">${S.done[i]?"✅":"›"}</span></div>`}).join("")}</div>`;
 };
-
 V.day=(i)=>{
   const d=DAYS[i], t=topic(d.t), done=!!S.done[i];
   setHeader("Hari "+(i+1));
@@ -364,43 +522,38 @@ window.toggleDone=i=>{
   if(S.done[i]) delete S.done[i]; else { S.done[i]=today(); toast(doneCount()===29?"🎉 Tahniah! Program 30 hari selesai!":"Syabas! Hari "+(i+1)+" selesai 🌟"); }
   save(); render();
 };
-
 V.topics=()=>{
   setHeader("12 Topik Utama");
   app.innerHTML=`<div class="grid">${TOPICS.map(t=>`
     <button class="topic" onclick="go('topic',${t.id})"><div class="ic" style="background:${t.c}">${t.ic}</div>${t.name}</button>`).join("")}</div>`;
 };
-
 V.topic=(id)=>{
   const t=topic(id); const list=DAYS.map((d,i)=>({d,i})).filter(x=>x.d.t===id);
   const k=list.filter(x=>S.done[x.i]).length;
   setHeader(t.name);
   app.innerHTML=`
   <div class="card" style="text-align:center">
-    <div class="ic" style="width:80px;height:80px;border-radius:50%;background:${t.c};margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:42px">${t.ic}</div>
+    <div style="width:80px;height:80px;border-radius:50%;background:${t.c};margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:42px">${t.ic}</div>
     <h2>${t.name}</h2><p class="muted">${t.desc}</p>
     <div class="bar"><i style="width:${k/list.length*100}%"></i></div><span class="muted">${k}/${list.length} pelajaran selesai</span>
   </div>
   <div class="card">${list.map(x=>`
     <div class="row" onclick="go('day',${x.i})"><div class="t"><b>Hari ${x.i+1}: ${x.d.title}</b></div><span class="chk">${S.done[x.i]?"✅":"›"}</span></div>`).join("")}</div>`;
 };
-
 let breathTimer=null;
 V.calm=()=>{
   setHeader("Sudut Tenang");
   app.innerHTML=`
   <div class="card" style="text-align:center">
     <h2>Pernafasan Tenang</h2>
-    <p class="muted">Gunakan bila rasa marah atau tertekan. Ikut bulatan: tarik nafas ketika membesar, hembus ketika mengecil.</p>
+    <p class="muted">Tarik nafas ketika bulatan membesar, hembus ketika mengecil. Boleh buat bersama anak!</p>
     <div class="breath" id="br">Sedia?</div>
     <button class="btn" id="bbtn" onclick="toggleBreath()">▶ Mula 1 Minit</button>
   </div>
   <div class="card">
     <h3>🛑 Teknik BERHENTI</h3>
-    <p><b>B</b>erhenti seketika — jangan terus bertindak.<br>
-       <b>T</b>arik nafas dalam 3 kali.<br>
-       <b>P</b>erhatikan perasaan anda dan keperluan anak.<br>
-       <b>P</b>ilih respons yang tenang.</p>
+    <p><b>B</b>erhenti seketika, jangan terus bertindak.<br><b>T</b>arik nafas dalam 3 kali.<br>
+       <b>P</b>erhatikan perasaan anda dan keperluan anak.<br><b>P</b>ilih respons yang tenang.</p>
     <h3>💬 Ayat Penenang Diri</h3>
     <p class="quote">"Anak saya bukan menyusahkan saya, dia sedang susah."</p>
     <p class="quote">"Saya boleh tenang. Saya ialah contoh untuk anak saya."</p>
@@ -415,28 +568,15 @@ window.toggleBreath=()=>{
     const inhale=(t/4)%2===0; br.classList.toggle("big",inhale); br.textContent=inhale?"Tarik...":"Hembus..."; t+=4; };
   step(); breathTimer=setInterval(step,4000);
 };
-
 V.journal=()=>{
   const items=Object.keys(S.notes).filter(k=>S.notes[k]&&S.notes[k].trim()).map(Number).sort((a,b)=>a-b);
   setHeader("Jurnal Saya");
   app.innerHTML = items.length? items.map(i=>`
     <div class="card" onclick="go('day',${i})"><span class="muted">Hari ${i+1} · ${topic(DAYS[i].t).name}</span>
       <b style="display:block">${DAYS[i].title}</b><p style="white-space:pre-wrap;margin:6px 0 0">${esc(S.notes[i])}</p></div>`).join("")
-    : `<div class="card" style="text-align:center"><div style="font-size:48px">📔</div><p>Belum ada catatan.<br><span class="muted">Catatan refleksi daripada setiap hari akan muncul di sini.</span></p>
+    : `<div class="card" style="text-align:center"><div style="font-size:48px">📔</div><p>Belum ada catatan.<br><span class="muted">Catatan refleksi program 30 hari akan muncul di sini.</span></p>
        <button class="btn" onclick="go('day',${nextDay()})">Mula Pelajaran</button></div>`;
 };
-
-V.settings=()=>{
-  setHeader("Tetapan");
-  app.innerHTML=`
-  <div class="card"><b>Nama anda</b>
-    <input id="nm" value="${esc(S.name)}" placeholder="Contoh: Puan Aishah">
-    <button class="btn" onclick="S.name=$('#nm').value.trim();save();toast('Disimpan')">Simpan</button></div>
-  <div class="card"><b>Mula semula program</b><p class="muted">Padam semua kemajuan dan catatan.</p>
-    <button class="btn ghost" onclick="resetAll()">🗑 Set Semula</button></div>
-  <div class="footer">ParentPro by Teacher Sha v1.0<br>Fun Learning with Teacher Sha</div>`;
-};
-window.resetAll=()=>{ if(confirm("Padam semua kemajuan dan catatan?")){S={done:{},notes:{},mood:{},name:S.name};save();toast("Program diset semula");go("home");} };
 
 function render(){ if(!current) current={view:"home"}; V[current.view](current.arg); }
 window.go=go;

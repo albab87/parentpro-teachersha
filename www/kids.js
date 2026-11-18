@@ -1,0 +1,130 @@
+/* Kandungan interaksi ibu bapa & anak */
+
+const EMOTIONS = [
+ {e:"😄",n:"Gembira",c:"#FCE8A6",tip:"Kongsi kegembiraannya! Tanya: \"Apa yang paling best hari ini? Ceritalah!\""},
+ {e:"😌",n:"Tenang",c:"#CDEAD0",tip:"Bagus! Hargai saat ini: \"Seronok tengok kamu tenang. Apa yang buat kamu rasa macam ni?\""},
+ {e:"🤩",n:"Teruja",c:"#FBD9B8",tip:"Raikan bersama dan tanya apa yang dia tunggu-tunggukan."},
+ {e:"😢",n:"Sedih",c:"#CFE6F2",tip:"Peluk dahulu, nasihat kemudian: \"Ibu/Ayah ada di sini. Nak cerita?\" Dengar tanpa menyampuk."},
+ {e:"😠",n:"Marah",c:"#F7C9CF",tip:"Terima perasaannya: \"Boleh rasa marah.\" Tarik nafas bersama 3 kali, kemudian tanya apa yang berlaku."},
+ {e:"😨",n:"Takut",c:"#E4DDF4",tip:"Jangan perkecilkan rasa takutnya. Katakan: \"Kamu selamat. Apa yang buat kamu rasa takut?\""},
+ {e:"😴",n:"Penat",c:"#E8E2D6",tip:"Mungkin perlu rehat atau tidur awal. Kurangkan tuntutan untuk hari ini."},
+ {e:"😕",n:"Keliru",c:"#F4E6CC",tip:"Bantu dia namakan perasaan: \"Kamu rasa tak pasti ya? Jom kita fikir sama-sama.\""}
+];
+
+const QCATS = {
+ perasaan:{n:"Perasaan",ic:"💗"}, sekolah:{n:"Sekolah",ic:"🏫"}, kawan:{n:"Kawan",ic:"🤝"},
+ keluarga:{n:"Keluarga",ic:"🏡"}, impian:{n:"Impian",ic:"✨"}, diri:{n:"Diri Sendiri",ic:"🌟"}, seronok:{n:"Seronok",ic:"😄"}
+};
+
+const QUESTIONS = [
+ {c:"perasaan",q:"Apa yang buat kamu paling gembira hari ini?"},
+ {c:"perasaan",q:"Ada tak apa-apa yang buat kamu sedih atau risau hari ini?"},
+ {c:"perasaan",q:"Kalau perasaan kamu hari ini ialah cuaca, cuaca apa? Kenapa?"},
+ {c:"perasaan",q:"Bila kali terakhir kamu rasa marah? Apa yang kamu buat?"},
+ {c:"perasaan",q:"Apa yang Ibu/Ayah boleh buat supaya kamu rasa lebih baik bila sedih?"},
+ {c:"perasaan",q:"Apa yang kamu rasa bila ada orang tolong kamu?"},
+ {c:"perasaan",q:"Bahagian badan mana yang terasa bila kamu gementar?"},
+ {c:"sekolah",q:"Apa perkara paling menarik yang kamu belajar hari ini?"},
+ {c:"sekolah",q:"Siapa yang duduk sebelah kamu? Dia macam mana orangnya?"},
+ {c:"sekolah",q:"Ada cikgu puji kamu hari ini? Sebab apa?"},
+ {c:"sekolah",q:"Subjek apa paling kamu suka dan kenapa?"},
+ {c:"sekolah",q:"Ada apa-apa yang susah di sekolah hari ini?"},
+ {c:"sekolah",q:"Waktu rehat tadi kamu buat apa?"},
+ {c:"kawan",q:"Siapa kawan baik kamu sekarang? Apa yang kamu suka tentang dia?"},
+ {c:"kawan",q:"Apa permainan yang kamu suka main dengan kawan-kawan?"},
+ {c:"kawan",q:"Pernah tak kamu tolong kawan? Ceritakan."},
+ {c:"kawan",q:"Kalau ada kawan kena ejek, apa kamu akan buat?"},
+ {c:"kawan",q:"Ada tak kawan yang buat kamu rasa tak selesa?"},
+ {c:"keluarga",q:"Apa aktiviti keluarga yang paling kamu suka?"},
+ {c:"keluarga",q:"Apa yang kamu paling suka tentang adik-beradik kamu?"},
+ {c:"keluarga",q:"Kalau kamu jadi Ibu/Ayah sehari, apa yang kamu nak buat?"},
+ {c:"keluarga",q:"Apa kenangan keluarga yang paling kelakar?"},
+ {c:"keluarga",q:"Apa satu perkara yang kamu nak kita buat bersama minggu ini?"},
+ {c:"keluarga",q:"Bila kamu rasa paling disayangi oleh Ibu/Ayah?"},
+ {c:"impian",q:"Bila besar nanti kamu nak jadi apa? Kenapa?"},
+ {c:"impian",q:"Kalau kamu ada satu kuasa ajaib, kuasa apa yang kamu pilih?"},
+ {c:"impian",q:"Tempat mana di dunia ini yang kamu paling nak pergi?"},
+ {c:"impian",q:"Apa satu perkara baru yang kamu nak belajar?"},
+ {c:"impian",q:"Kalau kamu boleh cipta sesuatu, apa yang kamu nak cipta?"},
+ {c:"diri",q:"Apa satu perkara yang kamu pandai buat?"},
+ {c:"diri",q:"Apa yang buat kamu rasa bangga dengan diri sendiri?"},
+ {c:"diri",q:"Apa yang kamu buat bila rasa takut?"},
+ {c:"diri",q:"Apa satu perkara baik yang kamu buat untuk orang lain hari ini?"},
+ {c:"diri",q:"Sebutkan 3 perkara yang kamu syukuri hari ini."},
+ {c:"diri",q:"Apa satu kesilapan yang kamu belajar sesuatu daripadanya?"},
+ {c:"seronok",q:"Kalau kamu boleh jadi haiwan, haiwan apa? Kenapa?"},
+ {c:"seronok",q:"Makanan apa yang kamu sanggup makan setiap hari?"},
+ {c:"seronok",q:"Kalau ada sehari tanpa peraturan, apa yang kamu nak buat?"},
+ {c:"seronok",q:"Ceritakan satu benda lucu yang berlaku minggu ini."},
+ {c:"seronok",q:"Kalau rumah kita ada bilik rahsia, apa ada di dalamnya?"}
+];
+
+const GAMES = [
+ {n:"Teka Lakonan",ic:"🎭",time:"20 min",items:"Kertas kecil, pen",
+  how:"Tulis perkataan (haiwan, pekerjaan, aktiviti) pada kertas. Setiap orang ambil satu dan lakonkan tanpa bercakap. Orang lain teka dalam 1 minit.",
+  score:"1 mata untuk pelakon dan penekak setiap kali tekaan betul."},
+ {n:"Menara Cawan",ic:"🥤",time:"15 min",items:"Cawan plastik atau kertas",
+  how:"Setiap pemain ada 1 minit untuk membina menara cawan paling tinggi. Kalau runtuh, boleh cuba semula selagi masa belum tamat.",
+  score:"Bilangan tingkat menara yang berdiri apabila masa tamat."},
+ {n:"Cari Harta Karun",ic:"🗺️",time:"25 min",items:"Senarai 10 barang di rumah",
+  how:"Ibu/Ayah sediakan senarai barang (contoh: sesuatu berwarna merah, sudu, buku cerita). Pemain berlumba mencarinya dalam rumah.",
+  score:"1 mata bagi setiap barang yang dijumpai dalam 5 minit."},
+ {n:"Kuiz Keluarga",ic:"❓",time:"20 min",items:"Tiada",
+  how:"Bergilir bertanya soalan tentang ahli keluarga: \"Apa makanan kegemaran Ayah?\", \"Warna kegemaran adik?\"",
+  score:"1 mata setiap jawapan betul."},
+ {n:"Bola Pingpong & Sudu",ic:"🥄",time:"15 min",items:"Sudu, bola pingpong / guli",
+  how:"Bawa bola atas sudu dari satu hujung ruang ke hujung lain tanpa jatuh. Buat 3 pusingan.",
+  score:"Bilangan pusingan berjaya tanpa jatuh (atau masa terpantas)."},
+ {n:"Ikut Cakap Ketua",ic:"🙋",time:"15 min",items:"Tiada",
+  how:"Ketua beri arahan. Ikut hanya jika arahan bermula dengan \"Ketua kata...\". Tersilap ikut, terkeluar.",
+  score:"Pemain terakhir yang tinggal dapat 3 mata, kedua 2 mata, ketiga 1 mata."},
+ {n:"Cerita Bersambung",ic:"📖",time:"15 min",items:"Tiada",
+  how:"Seorang mulakan satu ayat cerita. Setiap orang sambung satu ayat bergilir-gilir sehingga cerita tamat.",
+  score:"Undi bersama: setiap orang beri 1 bintang kepada ayat paling kreatif (bukan ayat sendiri)."},
+ {n:"Baling Stokin",ic:"🧦",time:"15 min",items:"Stokin bergulung, bakul",
+  how:"Letak bakul 2–3 langkah jauhnya. Setiap pemain baling 10 kali. Kanak-kanak kecil boleh berdiri lebih dekat.",
+  score:"Bilangan stokin yang masuk bakul."},
+ {n:"Ingat Barang",ic:"🧠",time:"15 min",items:"15 barang kecil, kain penutup",
+  how:"Susun 15 barang atas dulang. Semua lihat selama 30 saat, kemudian tutup. Tulis atau sebut semua barang yang diingat.",
+  score:"1 mata setiap barang yang diingat dengan betul."},
+ {n:"Cabaran Sandwic",ic:"🥪",time:"30 min",items:"Roti, inti pilihan",
+  how:"Setiap orang hias sandwic paling kreatif dalam 10 minit. Kemudian makan bersama!",
+  score:"Undi bersama kategori Paling Cantik, Paling Kreatif, Paling Sedap (1 mata setiap kemenangan)."},
+ {n:"Teka Bunyi",ic:"👂",time:"15 min",items:"Barang di rumah",
+  how:"Penekak tutup mata. Seorang buat bunyi guna barang di rumah (ketuk periuk, renyuk plastik). Teka barang apa.",
+  score:"1 mata setiap tekaan betul."},
+ {n:"Congkak / Batu Seremban",ic:"🪨",time:"25 min",items:"Papan congkak atau 5 biji batu/guli",
+  how:"Ajar anak permainan tradisional zaman Ibu/Ayah kecil. Ceritakan juga kenangan anda bermain dahulu.",
+  score:"Ikut peraturan permainan; menang 3 mata, seri 1 mata."}
+];
+
+const IDEAS = [
+ {k:"10 minit",ic:"⏱️",t:"Baca buku cerita bersama sebelum tidur"},
+ {k:"10 minit",ic:"⏱️",t:"Menari bersama satu lagu kegemaran anak"},
+ {k:"10 minit",ic:"⏱️",t:"Lukis potret satu sama lain"},
+ {k:"10 minit",ic:"⏱️",t:"Tulis nota kasih sayang dan selit dalam beg sekolah"},
+ {k:"10 minit",ic:"⏱️",t:"Bersembang di katil: kongsi 1 perkara best & 1 susah hari ini"},
+ {k:"Di rumah",ic:"🏠",t:"Masak atau bakar kuih bersama"},
+ {k:"Di rumah",ic:"🏠",t:"Buat 'kem' dalam rumah guna selimut dan kerusi"},
+ {k:"Di rumah",ic:"🏠",t:"Malam wayang keluarga dengan popcorn buatan sendiri"},
+ {k:"Di rumah",ic:"🏠",t:"Tanam pokok kecil dalam pasu dan jaga bersama"},
+ {k:"Di rumah",ic:"🏠",t:"Lihat album gambar lama dan ceritakan kenangan"},
+ {k:"Di rumah",ic:"🏠",t:"Buat projek kraf daripada barang terpakai"},
+ {k:"Luar",ic:"🌳",t:"Berkelah ringkas di taman berdekatan"},
+ {k:"Luar",ic:"🌳",t:"Berbasikal atau berjalan kaki petang bersama"},
+ {k:"Luar",ic:"🌳",t:"Lawat perpustakaan awam dan pilih buku bersama"},
+ {k:"Luar",ic:"🌳",t:"Main bola atau layang-layang di padang"},
+ {k:"Luar",ic:"🌳",t:"Lawat datuk dan nenek bersama"},
+ {k:"Kebaikan",ic:"🤲",t:"Buat kerja amal kecil: beri makanan kepada jiran"},
+ {k:"Kebaikan",ic:"🤲",t:"Kemas dan derma mainan atau baju yang tidak digunakan"},
+ {k:"Kebaikan",ic:"🤲",t:"Solat / berdoa berjemaah dan kongsi doa masing-masing"},
+ {k:"Kebaikan",ic:"🤲",t:"Buat kad terima kasih untuk cikgu atau jiran"}
+];
+
+const MISSIONS = [
+ {id:"emo",ic:"💗",t:"Semak emosi anak",auto:true},
+ {id:"qa",ic:"💬",t:"10 minit soal jawab bersama anak",auto:true},
+ {id:"hug",ic:"🤗",t:"Peluk & ucap \"Ibu/Ayah sayang kamu\""},
+ {id:"praise",ic:"⭐",t:"Puji usaha anak secara spesifik"},
+ {id:"nogadget",ic:"📵",t:"Masa bersama tanpa gajet"}
+];

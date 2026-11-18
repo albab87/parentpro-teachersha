@@ -3,16 +3,24 @@
 App Android oleh **Fun Learning with Teacher Sha**.
 
 ## Ciri-ciri
-- 📅 Program 30 hari (pelajaran, tugasan & refleksi harian)
-- 🧩 12 topik utama dengan kemajuan setiap topik
-- 🔥 Statistik kemajuan & hari berturut-turut
-- 😊 Semakan perasaan harian
-- 🌿 Sudut Tenang (latihan pernafasan 1 minit + teknik BERHENTI)
-- 📔 Jurnal refleksi (disimpan dalam telefon, berfungsi tanpa internet)
+**Interaksi harian ibu bapa & anak (10 minit sehari)**
+- 💗 Semakan emosi harian anak (8 emosi + tip respons untuk ibu bapa + sejarah 7 hari)
+- 💬 Soal jawab harian: 5 soalan setiap hari bagi setiap anak, pemasa 10 minit, catat jawapan
+- 📚 Buku Kenangan: semua jawapan anak disimpan mengikut tarikh
+- 🎯 Misi Ikatan Harian (checklist 5 misi + hari berturut-turut)
+- 🎲 Permainan keluarga mingguan (12 permainan bergilir), rekod skor & Carta Juara Keluarga
+- 🌈 20 idea masa bersama keluarga
+
+**Untuk ibu bapa**
+- 📅 Program Bimbingan Hidup 30 Hari (12 topik), jurnal refleksi & Sudut Tenang
+
+Semua data disimpan dalam telefon dan app berfungsi tanpa internet.
 
 ## Struktur fail
 ```
-www/index.html                  ← kod app (ubah kandungan di sini)
+www/index.html                  ← kod app
+www/kids.js                     ← soalan, emosi, permainan, idea (ubah kandungan di sini)
+www/program.js                  ← kandungan Program 30 Hari
 www/keluarga.jpg                ← gambar di skrin utama
 icon.png                        ← ikon app (512x512)
 .github/workflows/build-apk.yml ← arahan GitHub untuk bina APK

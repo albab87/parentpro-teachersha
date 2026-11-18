@@ -58,8 +58,8 @@ jobs:
       - name: Terbit sebagai Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: v1.0.${{ github.run_number }}
-          name: ParentPro v1.0.${{ github.run_number }}
+          tag_name: v2.0.${{ github.run_number }}
+          name: ParentPro v2.0.${{ github.run_number }}
           body: "Muat turun ParentPro.apk di bawah dan install di telefon Android."
           files: ParentPro.apk
           make_latest: true
